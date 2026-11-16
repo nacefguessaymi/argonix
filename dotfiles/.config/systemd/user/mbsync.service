@@ -1,6 +1,0 @@
-[Unit]
-Description=mbsync all accounts
-
-[Service]
-Type=oneshot
-ExecStart=/home/nacef/.local/bin/mail_notify
