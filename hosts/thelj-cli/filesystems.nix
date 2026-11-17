@@ -13,4 +13,8 @@
     fsType = "ext4";
     options = ["no-fail"];
   };
+  
+  swapDevices = [
+    { device = "/dev/disk/by-label/swap"}
+  ]
 }
