@@ -14,7 +14,7 @@
   fileSystems."/data" = {
     device = "/dev/disk/by-label/data";
     fsType = "ext4";
-    options = [ "no-fail" ];
+    options = [ "nofail" ];
   };
 
   swapDevices = [
