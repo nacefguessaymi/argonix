@@ -99,12 +99,13 @@
             "basedpyright"
             "ruff"
           ];
-          code-actions-on-save = [
-            {
-              code-action = "source.organizeImports";
-              enabled = true;
-            }
-          ];
+          formatter = {
+            command = "sh";
+            args = [
+              "-c"
+              "ruff check --select I --fix --exit-zero --quiet - | ruff format -"
+            ];
+          };
         }
       ];
     };
