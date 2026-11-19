@@ -14,10 +14,12 @@ in
     ./filesystems.nix
   ];
 
-  home-manager.users.nacef.theme = gogh "${inputs.gogh}/data/json/nord.json" // {
-    helix = "nord";
+  home-manager.users.nacef = {
+    theme = gogh "${inputs.gogh}/data/json/nord.json" // {
+      helix = "nord";
+    };
+    wayland.windowManager.mango.extraConfig = "monitor_rule=make:ASUSTek COMPUTER INC,model:PA32QCV,serial:T7LMSV009006,x:0,y:0,scale:2";
   };
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -63,24 +65,16 @@ in
     git
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.mango.enable = true;
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd mango";
+      user = "greeter";
+    };
+  };
 
   system.stateVersion = "26.05"; # Did you read the comment?
   nix.settings.experimental-features = [

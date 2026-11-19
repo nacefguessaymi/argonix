@@ -9,6 +9,10 @@
       url = "github:Gogh-Co/Gogh";
       flake = false;
     };
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -19,12 +23,14 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/thelj-cli/configuration.nix
+          inputs.mangowm.nixosModules.mango
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.nacef = import ./home/nacef.nix;
+            home-manager.sharedModules = [ inputs.mangowm.hmModules.mango ];
           }
         ];
       };
