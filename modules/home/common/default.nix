@@ -1,10 +1,11 @@
 {
   imports = [
-    ../theme.nix
-    ./helix.nix
     ./font.nix
     ./ghostty.nix
-    ./yazi.nix
+    ./helix.nix
     ./mango.nix
+    ../theme.nix
+    ./yazi.nix
+    ./zen.nix
   ];
 }
