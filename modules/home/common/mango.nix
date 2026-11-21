@@ -83,6 +83,7 @@ in
         "${mod},C,killclient"
         "${mod},M,quit"
         "${mod},E,spawn,${fileManager}"
+        "${mod},B,spawn,${"zen-beta"}"
         "${mod},V,togglefloating"
         "${mod},F,togglefullscreen"
         "${mod}+SHIFT,R,reload_config"

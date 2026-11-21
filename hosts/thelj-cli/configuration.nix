@@ -32,6 +32,7 @@ in
 
   time.timeZone = "America/New_York";
 
+  services.upower.enable = true;
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
