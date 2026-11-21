@@ -39,19 +39,19 @@ in
     systemd.enable = true;
 
     settings = {
-      rootcolor = c "ff" t.background;
-      focuscolor = c "ff" (p 4);
-      bordercolor = c "aa" (p 8);
-      urgentcolor = c "ff" (p 1);
-      scratchpadcolor = c "ff" (p 6);
+      root_color = c "ff" t.background;
+      focus_color = c "ff" (p 4);
+      border_color = c "aa" (p 8);
+      urgent_color = c "ff" (p 1);
+      scratchpad_color = c "ff" (p 6);
       shadows_color = c "ee" t.background;
       cursor_size = 12;
 
-      borderpx = 1;
-      gappih = 5;
-      gappiv = 5;
-      gappoh = 5;
-      gappov = 5;
+      border_px = 1;
+      gap_inner_horizontal = 5;
+      gap_inner_vertical = 5;
+      gap_outer_horizontal = 5;
+      gap_outer_vertical = 5;
       border_radius = 10;
       focused_opacity = 1.0;
       unfocused_opacity = 0.75;
@@ -64,6 +64,7 @@ in
       };
 
       shadows = 1;
+      layer_shadows = 0;
       shadow_only_floating = 0;
       shadows_size = 4;
 
