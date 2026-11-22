@@ -1,5 +1,6 @@
 {
   imports = [
+    ./cli.nix
     ./font.nix
     ./ghostty.nix
     ./helix.nix
